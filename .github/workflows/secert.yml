@@ -1,0 +1,31 @@
+name: vars-secrets
+
+on:
+  push:
+    branches:
+      - feature
+
+jobs:
+
+  build:
+
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: run vars-secrets
+
+        run: echo "hello thiru, ${{ vars.MY_NAME }}"
+        run: echo "thiru krish, ${{secrets.MY_SECRET}}"
+
+  test:
+
+    needs:build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: success
+
+        run: echo "test completed successfully"
+         
