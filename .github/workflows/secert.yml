@@ -15,8 +15,9 @@ jobs:
 
       - name: run vars-secrets
 
-        run: echo "hello thiru, ${{ vars.MY_NAME }}"
-        run: echo "thiru krish, ${{secrets.MY_SECRET}}"
+        run: | 
+         echo "hello thiru, ${{ vars.MY_NAME }}"
+         echo "hello krish, ${{ secrets.MY_SECRET }}"
 
   test:
 
