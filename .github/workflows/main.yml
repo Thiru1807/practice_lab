@@ -1,0 +1,27 @@
+name : simple_file
+on:
+  workflow_dispatch:
+  push:
+    branches:
+      - main
+jobs:
+    build:
+      runs-on: ubuntu-latest
+      steps:
+       - name: build success
+         run: echo "build success"
+
+    test:
+      needs: build   
+      runs-on: ubuntu-latest
+      steps:
+       - name: test success
+         run: echo "test success"
+
+
+    deploy:
+      needs: test     
+      runs-on: ubuntu-latest
+      steps:
+       - name: deployed
+         run: echo "deploy success"
