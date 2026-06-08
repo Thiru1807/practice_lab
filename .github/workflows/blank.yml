@@ -1,0 +1,30 @@
+name: env-var
+on:
+  workflow_dispatch:
+
+env:
+  COMPANY: "infinite computersolutions"
+  EMPLOYEE: "thirumal krishnan"
+
+jobs:
+    wish:
+      runs-on: ubuntu-latest
+      env:
+        COURSE: Devops
+      steps:
+        - name: printed all these env's (step1)
+          env:
+            JOB: SRE
+          run: |
+            echo "company name is $COMPANY"
+            echo "employee name is $EMPLOYEE"
+            echo "course name is $COURSE"
+            echo "job name is $JOB"
+        - name: printed all these env's (step2)
+          run: |
+            echo "company name is $COMPANY"
+            echo "employee name is $EMPLOYEE"
+            echo "course name is $COURSE"
+            echo "job name is $JOB"
+
+       
